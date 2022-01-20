@@ -1,51 +1,31 @@
 package br.com.dio;
 
-public class Curso {
+public class Curso extends Conteudo{
     //Modificadores de acesso (private, protected, public)
 
-    private String titulo;
-    private String descricao;
-    private int cargaHorario;
+    private int cargaHoraria;
 
-
-
-
-
-
-
-
-
-    public String getTitulo() {
-        return titulo;
+    @Override
+    public double calcularXp() {
+        return XP_PADRAO+20d;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+
+    public int getCargaHoraria() {
+        return cargaHoraria;
     }
 
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public int getCargaHorario() {
-        return cargaHorario;
-    }
-
-    public void setCargaHorario(int cargaHorario) {
-        this.cargaHorario = cargaHorario;
+    public void setCargaHoraria(int cargaHoraria) {
+        this.cargaHoraria = cargaHoraria;
     }
 
 
     @Override
     public String toString() {
         return "Curso{" +
-                "titulo='" + titulo + '\'' +
-                ", descricao='" + descricao + '\'' +
-                ", cargaHorario=" + cargaHorario +
+                "titulo='" + getTitulo() + '\'' +
+                ", descricao='" + getDescricao() + '\'' +
+                ", cargaHorario=" + cargaHoraria+
                 '}';
     }
 }
